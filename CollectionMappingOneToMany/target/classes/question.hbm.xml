@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 5.3//EN" "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+<hibernate-mapping>
+	<class name="com.example.Question" table="question321">
+		<id name="id">
+			<generator class="increment"></generator></id>
+		<property name="question"></property>
+		<list name="answers" cascade="all">
+			<key column="qid"></key>
+			<index column="type"></index>
+			<one-to-many class="com.example.Answer"></one-to-many></list></class>
+	<class name="com.example.Answer" table="answer321">
+		<id name="id">
+			<generator class="increment"></generator></id>
+		<property name="answer"></property>
+		<property name="user"></property></class></hibernate-mapping>
